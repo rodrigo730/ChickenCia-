@@ -30,4 +30,12 @@ class PlanController extends Controller
     {
        return view('admin.pages.plans.create');
     }
+    public function store(Request $request)
+    {
+      $data = $request->all();
+      $data['url'] = $request->name
+       this->repository->create();
+
+       return redirect()->route("plans.index");
+    }
 }

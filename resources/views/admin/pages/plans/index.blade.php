@@ -3,7 +3,7 @@
 @section('title', 'Produtos')
 
 @section('content_header')
-    <h1>Produtos <a href="[[ route['plans.create'] ]]" class="btn btn-dark">ADD</a></h1>
+    <h1>Produtos <a href="[[ route['plans.create'] ]]" class="btn btn-dark" method="POST">ADD</a></h1>
 @stop
 
 @section('content')
