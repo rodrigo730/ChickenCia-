@@ -3,19 +3,26 @@
 @section('title', 'Produtos')
 
 @section('content_header')
+<ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="{{ route('admin.index') }}">Dashboard</a></li>
+        <li class="breadcrumb-item active"><a href="{{ route('plans.index') }}" >Planos</a></li>
+
+    </ol>
+
     <h1>Produtos <a href="{{ route('plans.create') }}" class="btn btn-dark" method="POST">ADD</a></h1>
+
 @stop
 
 @section('content')
 <div class="card">
   
   <div class="card-header">
-  <form action="" method="POST" class="form form-inline">
+  <form action="{{ route('plans.search') }}" method="POST" class="form form-inline">
       @csrf
        <div class="form-group">
-          <input type="text" name="filter" placeholder="Nome" class="form-control">
+          <input type="text" name="filter" placeholder="Nome" class="form-control" value="{{ $filters['name'] ??  ''}}">
+          <button type="submit" class="btn btn-dark">Filtrar</button>
        </div>
-        <button type="submit" class="btn btn-dark">Filtrar</button>
   </form>
 
   </div>   
@@ -50,7 +57,14 @@
      </table>
    </div>
    <div class="card-footer">
-       {!! $plans->links() !!}
+        @if(isset($filters))
+
+        {!! $plans->appends($filters)->links() !!}
+        @else 
+
+        {!! $plans->links() !!}
+        @endif
+
    </div>
 </div>
 @stop 

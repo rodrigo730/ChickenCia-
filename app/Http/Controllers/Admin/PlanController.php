@@ -19,7 +19,7 @@ class PlanController extends Controller
 
     public function index()
     {
-         $plans = $this->repository->paginate(1);
+         $plans = $this->repository->latest()->paginate();
 
         return view('admin.pages.plans.index', [
             'plans' =>  $plans,  
@@ -38,6 +38,7 @@ class PlanController extends Controller
 
        return redirect()->route("plans.index");
     }
+
     public function show($url)
     {
       $plan = $this->repository->where('url', $url)->first();
@@ -51,6 +52,7 @@ class PlanController extends Controller
       ]);
        
     }
+
     public function destroy($url)
     {
       $plan = $this->repository->where('url', $url)->first();
@@ -64,4 +66,14 @@ class PlanController extends Controller
       return redirect()->route('plans.index');
        
     } 
+    public function search(Request $request)
+    {
+      $filters = $request->all();
+      $plans = $this->repository->search($request->filter);
+
+      return view('admin.pages.plans.index', [
+        'plans' =>  $plans,  
+        'filters' => $filters,
+    ]); 
+    }
 }
