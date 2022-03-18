@@ -9,12 +9,12 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-          <form action="[[ route('plans.store') ]]" class="form" method="POST">
+          <form action="{{route('plans.store')}}" class="form" method="POST">
               @csrf
 
               <div class="form-group">
                   <label >Nome</label>
-                  <input type="text" name="" class="form-control" placeholder="Nome:">
+                  <input type="text" name="name" class="form-control" placeholder="Nome:">
               </div>
               <div class="form-group">
                   <label >Preco</label>

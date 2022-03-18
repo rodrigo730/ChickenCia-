@@ -3,14 +3,20 @@
 @section('title', 'Produtos')
 
 @section('content_header')
-    <h1>Produtos <a href="[[ route['plans.create'] ]]" class="btn btn-dark" method="POST">ADD</a></h1>
+    <h1>Produtos <a href="{{ route('plans.create') }}" class="btn btn-dark" method="POST">ADD</a></h1>
 @stop
 
 @section('content')
 <div class="card">
   
   <div class="card-header">
-  #filtros
+  <form action="" method="POST" class="form form-inline">
+      @csrf
+       <div class="form-group">
+          <input type="text" name="filter" placeholder="Nome" class="form-control">
+       </div>
+        <button type="submit" class="btn btn-dark">Filtrar</button>
+  </form>
 
   </div>   
   <div class="card-body">
@@ -33,8 +39,8 @@
                    {{ $plan->price}}
                </td>
                
-               <td>
-                  <a href="" class="btn btn-warning">Ver</a>
+               <td style="width=10px;">
+                        <a href="{{ route('plans.show', $plan->url ) }}" class="btn btn-warning">Ver</a>
                </td>
            </tr>
 
