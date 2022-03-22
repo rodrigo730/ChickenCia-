@@ -9,7 +9,7 @@
 
     </ol>
 
-    <h1>Produtos <a href="{{ route('plans.create') }}" class="btn btn-dark" method="POST">ADD</a></h1>
+    <h1>Produtos <a href="{{ route('plans.create') }}" class="btn btn-dark" method="POST"><i class="fas fa-plus-square"></i> </i>ADD</a></h1>
 
 @stop
 
@@ -32,7 +32,7 @@
           <tr>
               <th>Nome</th>
               <th>Preço</th>
-              <th width= "50px" >Ações</th>
+              <th width= "150" >Ações</th>
           </tr>
       </thead>
        <tbody>
@@ -47,6 +47,7 @@
                </td>
                
                <td style="width=10px;">
+                        <a href="{{ route('plans.edit', $plan->url) }}" class="btn btn-info">Edit</a>
                         <a href="{{ route('plans.show', $plan->url ) }}" class="btn btn-warning">Ver</a>
                </td>
            </tr>
