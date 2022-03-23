@@ -1,37 +1,24 @@
 @extends('adminlte::page')
 
-@section('title', 'Editar Plano {{ $plan->name }}")
+@section('title', 'Editar Plano {{ $plan->name }}')
 
 @section('content_header')
     <h1>Detalhes do Plano <b>{{ $plan->name }}</b></h1>
 @stop
 
 @section('content')
-        <div class="card">
-            <div class="card-body">
-                <ul>
-                    <li>
-                        <strong>Nome: </strong> {{$plan-> name}}
-                    </li>
-                    
-                    <li>
-                        <strong>Url: </strong  > {{$plan-> url}}
-                    </li>
-                    
-                    <li>
-                        <strong>Preço: </strong> R${{ number_format($plan->price, 2, ',', '.')}}
-                    </li>
-                    
-                    <li>
-                        <strong>Descrição: </strong> {{$plan-> description}}
-                    </li>
-                </ul>
+<div class="card">
+        <div class="card-body">
+          <form action="{{ route('plans.update' , $plan->url)}}" class="form" method="POST">
+              @csrf
 
-                <form action="{{ route('plans.destroy', $plan->url) }}" method="POST">
-                    @csrf
-                    @method('DELETE')
-                    <button type="submit" class="btn btn-danger">DELETAR O PLANO {{$plan-> name}} <i class="fas fa-trash"></i></i></button>
-                </form>
-            </div>
+              @method('PUT')
+              @include('admin.pages.plans._partials.form')  
+
+             
+          </form>
+
+          </form>
         </div>
+    </div>
 @endsection
