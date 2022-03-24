@@ -25,6 +25,6 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Paginator::useBootstrap();
-        Plan::Observer(Observer::class);
+        http://127.0.0.1:8000
     }
 }
