@@ -3,14 +3,14 @@
 namespace App\Observers;
 
 use Illuminate\Support\Str;
-use App\Models\Models\Plan;
+use App\Models\Plan;
 
 class PlanObserver
 {
     /**
-     * Handle the Plan "creting" event.
+     * Handle the Plan "created" event.
      *
-     * @param  \App\Models\Models\\Plan  $plan
+     * @param  \App\Models\Plan  $plan
      * @return void
      */
     public function creating(Plan $plan)
@@ -19,14 +19,13 @@ class PlanObserver
     }
 
     /**
-     * Handle the Plan "updating" event.
+     * Handle the Plan "updated" event.
      *
-     * @param  \App\Models\Models\\Plan  $plan
+     * @param  \App\Models\Plan  $plan
      * @return void
      */
-    public function saving(Plan $plan)
+    public function updating(Plan $plan)
     {
         $plan->url = Str::kebab($plan->name);
     }
-
 }
