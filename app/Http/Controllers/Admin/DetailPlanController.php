@@ -61,7 +61,11 @@ class DetailPlanController extends Controller
         return redirect()->route('details.plan.index', $plan->url);
     }
 
+<<<<<<< HEAD
     
+=======
+   
+>>>>>>> 07636057a0fd68c98883681d37a19f3685e43b4b
     public function edit($urlPlan, $idDetail)
     {
         $plan = $this->plan->where('url', $urlPlan)->first();
@@ -91,7 +95,12 @@ class DetailPlanController extends Controller
 
         return redirect()->route('details.plan.index', $plan->url);
     }
+<<<<<<< HEAD
   /**
+=======
+    /** 
+
+>>>>>>> 07636057a0fd68c98883681d37a19f3685e43b4b
     public function show($urlPlan, $idDetail)
     {
         $plan = $this->plan->where('url', $urlPlan)->first();

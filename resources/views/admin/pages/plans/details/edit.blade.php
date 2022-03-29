@@ -11,15 +11,25 @@
         <li class="breadcrumb-item active"><a href="{{ route('details.plan.edit', [$plan->url, $detail->id]) }}" class="active">Editar</a></li>
     </ol>
 
+<<<<<<< HEAD
     <h1>Editar o Detalhe {{ $detail->name }}</h1>
+=======
+    <h1>Editar o detalhe {{ $detail->name }}</h1>
+>>>>>>> 07636057a0fd68c98883681d37a19f3685e43b4b
 @stop
 
 @section('content')
     <div class="card">
         <div class="card-body">
+<<<<<<< HEAD
             <form action="{{ route('details.plan.update', [$plan->url, $detail->id] ) }}" method="post">
                 @method('PUT')
                 @include('admin.pages.plans.details._partials.form')
+=======
+            <form action="{{ route('details.plan.update', [$plan->url, $detail->id]) }}" method="post">
+            @method('PUT')    
+            @include('admin.pages.plans.details._partials.form')
+>>>>>>> 07636057a0fd68c98883681d37a19f3685e43b4b
             </form>
         </div>
     </div>
