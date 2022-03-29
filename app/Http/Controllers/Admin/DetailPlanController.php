@@ -53,9 +53,9 @@ class DetailPlanController extends Controller
             return redirect()->back();
         }
 
-        // $data = $request->all();
+         //$data = $request->all();
         // $data['plan_id'] = $plan->id;
-        // $this->repository->create($data);
+         //$this->repository->create($data);
         $plan->details()->create($request->all());
 
         return redirect()->route('details.plan.index', $plan->url);

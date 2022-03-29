@@ -38,7 +38,7 @@
                     @foreach ($details as $detail)
                         <tr>
                             <td>
-                                {{ $plan->name }}
+                                {{ $detail->name }}
                             </td>
                             <td>
                                 <a href="{{ route('plans.show', $plan->url) }}" class="btn btn-warning">Ver</a>
