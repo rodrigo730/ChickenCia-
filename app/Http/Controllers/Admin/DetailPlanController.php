@@ -61,7 +61,7 @@ class DetailPlanController extends Controller
         return redirect()->route('details.plan.index', $plan->url);
     }
 
-    /**
+    
     public function edit($urlPlan, $idDetail)
     {
         $plan = $this->plan->where('url', $urlPlan)->first();
@@ -76,6 +76,7 @@ class DetailPlanController extends Controller
             'detail' => $detail,
         ]);
     }
+     
 
     public function update(StoreUpdateDetailPlan $request, $urlPlan, $idDetail)
     {
@@ -90,7 +91,7 @@ class DetailPlanController extends Controller
 
         return redirect()->route('details.plan.index', $plan->url);
     }
-
+  /**
     public function show($urlPlan, $idDetail)
     {
         $plan = $this->plan->where('url', $urlPlan)->first();
