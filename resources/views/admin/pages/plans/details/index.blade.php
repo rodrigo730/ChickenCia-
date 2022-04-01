@@ -21,17 +21,20 @@
     </li>
   </ol>
 
-  <h1>Detalhes do plano {{ $plan->name }} <a href="{{ route('details.plan.create', $plan->url) }}" class="btn btn-dark" style="margin-left: 10px">Novo Detalhe</a></h1>
+  <h1>Detalhes do plano {{ $plan->name }} <a href="{{ route('details.plan.create', $plan->url) }}" class="btn btn-dark"  >Novo Detalhe</a></h1>
 @stop
 
 @section('content')
     <div class="card">
         <div class="card-body">
+
+        @include('admin.includes.alerts')
+
             <table class="table table-condensed">
                 <thead>
                     <tr>
                         <th>Nome</th>
-                        <th style="width:150px;">Ações</th>
+                        <th style="width:150px">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -41,9 +44,9 @@
                                 {{ $detail->name }}
                             </td>
                             <td>
-                                <a href="{{ route('plans.show', $plan->url) }}" class="btn btn-warning">Ver</a>
-
-                                <a href="{{ route('plans.edit', $plan->url) }}" class="btn btn-info">Editar</a>
+                                <a href="{{ route('details.plan.show', [$plan->url, $detail->id ]) }}" class="btn btn-warning">Ver</a>
+                                
+                                <a href="{{ route('details.plan.edit', [$plan->url, $detail->id ]) }}" class="btn btn-info">Editar</a>
                             </td>
                         </tr>
                     @endforeach
