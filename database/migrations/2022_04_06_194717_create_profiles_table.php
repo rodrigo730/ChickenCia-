@@ -13,9 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('details_plan', function (Blueprint $table) {
-            $table->id();
-            $table->String('name');
+        Schema::create('profiles', function (Blueprint $table) {
+            $table->bigIncrements('id');
+            $table->string('nome')->unique();
+            $table->string('description')->nullable();
             $table->timestamps();
         });
     }
@@ -27,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('details_plans');
+        Schema::dropIfExists('profiles');
     }
 };

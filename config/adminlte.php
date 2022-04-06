@@ -229,6 +229,10 @@ return [
             'text' => 'Planos',
             'url'  => 'admin/plans',
         ],
+        [
+            'text' => 'Perfil',
+            'url'  => 'admin/profiles',
+        ],
     ],
 
     /*
