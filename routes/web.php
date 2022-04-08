@@ -4,6 +4,14 @@
  use App\Http\Controllers\Admin\PlanController;
  use App\Http\Controllers\Admin\DetailPlanController;
  use App\Http\Controllers\Admin\ACL\ProfileController;
+
+
+
+/*
+*Route Profiles
+*/
+Route::resource('profiles', ProfileController::class );
+
  Route::prefix('admin')
  ->namespace('Admin')
  ->group(function() {
@@ -12,7 +20,7 @@
 /*
 *Route Profiles
 */
-Route::resource('profiles', ProfileController::class );
+//Route::resource('profiles', ProfileController::class );
 
 /**
 * Routes Details Plans

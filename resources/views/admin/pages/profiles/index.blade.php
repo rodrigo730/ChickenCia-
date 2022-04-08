@@ -13,7 +13,7 @@
         </li>
     </ol>
 
-    <h1>Painel <a href="{{ route('profiles.create') }}" class="btn btn-dark" method="POST" style="margin-left: 10px">Novo Plano</a> </h1>
+    <h1>Painel <a href="{{ route('profiles.create') }}" class="btn btn-dark" method="POST" style="margin-left: 10px">Criar Novo Perfil</a> </h1>
 
 @stop
 
@@ -21,7 +21,7 @@
     <p>Listagem dos Planos</p>
     <div class="card">
         <div class="card-header">
-            <form action="{{ route('profiles.search') }}" method="POST" class="form form-inline">
+            <form action="{{ route('plans.search') }}" method="POST" class="form form-inline">
                 @csrf
                 <div class="form-group">
                 <input type="text" name="filter" placeholder="Procurar" class="form-control" value="{{ $filters['filter'] ??  ''}}">

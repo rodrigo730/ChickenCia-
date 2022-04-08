@@ -15,8 +15,8 @@ return new class extends Migration
     {
         Schema::create('profiles', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('nome')->unique();
-            $table->string('description')->nullable();
+            $table->String('name')->unique();
+            $table->String('description')->nullable();
             $table->timestamps();
         });
     }
