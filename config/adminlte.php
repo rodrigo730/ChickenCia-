@@ -231,7 +231,7 @@ return [
         ],
         [
             'text' => 'Perfil',
-            'url'  => 'admin/profiles',
+            'url'  => 'profiles',
         ],
     ],
 

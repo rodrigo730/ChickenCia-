@@ -45,15 +45,13 @@
                             <td>
                                 {{ $profiles->name }}
                             </td>
+            
                             <td>
-                            R$ {{ number_format($plan->price, 2, ',', '.')}}
-                            </td>
-                            <td>
-                                <a href="{{ route('details.show', $plan->url) }}" class="btn btn-primary">Ver</a>
 
-                                <a href="{{ route('profiles.plan.index', $plan->url) }}" class="btn btn-primary">Detalhes</a>
 
-                                <a href="{{ route('profiles.edit', $plan->url) }}" class="btn btn-info">Editar</a>
+                                <a href="{{ route('profiles.edit', $profiles->id) }}" class="btn btn-primary">Detalhes</a>
+
+                                <a href="{{ route('profiles.show', $profiles->id) }}" class="btn btn-info">Editar</a>
                             </td>
                         </tr>
                     @endforeach
@@ -61,7 +59,7 @@
             </table>
         </div>
         <div class="card-footer">
-            @if(isset($filters))
+            @if (isset($filters))
                 {!! $profiles->appends($filters)->links() !!}
             @else
                 {!! $profiles->links() !!}
