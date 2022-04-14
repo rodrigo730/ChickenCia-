@@ -35,7 +35,7 @@
                 <thead>
                     <tr>
                         <th>Nome</th>
-                        <th>Preço</th>
+                        
                         <th style="width:250" >Ações</th>
                     </tr>
                 </thead>
@@ -60,9 +60,11 @@
         </div>
         <div class="card-footer">
             @if (isset($filters))
-                {!! $profiles->appends($filters)->links() !!}
+                <p> se filters estiver definida roda aqui</P>
+                { $profiles->appends($filters)->links() }
             @else
-                {!! $profiles->links() !!}
+                <p> se FILTER NAO DEFINIDA estiver definida roda aqui</P>
+                { $profiles->links() }
             @endif
         </div>
     </div>

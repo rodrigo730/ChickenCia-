@@ -5,12 +5,12 @@
  use App\Http\Controllers\Admin\DetailPlanController;
  use App\Http\Controllers\Admin\ACL\ProfileController;
 
+ Route::any('profiles/search', 'ACL\ProfileController@search')->name('profiles.search');
+ Route::resource('profiles', ProfileController::class );
+ 
 
 
-/*
-*Route Profiles
-*/
-Route::resource('profiles', ProfileController::class );
+
 
  Route::prefix('admin')
  ->namespace('Admin')
@@ -56,6 +56,7 @@ Route::get('plans/{url}', [PlanController::class, 'show'])->name('plans.show');
 Route::post('plans', [PlanController::class, 'store'])->name('plans.store');
 
 Route::get('plans', [PlanController::class, 'index'])->name('plans.index');
+
 
 /**
 * Home (Dashboard)

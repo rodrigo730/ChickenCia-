@@ -62,9 +62,9 @@
         </div>
         <div class="card-footer">
             @if(isset($filters))
-                {!! $plans->appends($filters)->links() !!}
+                { $plans->appends($filters)->links() }
             @else
-                {!! $plans->links() !!}
+                { $plans->links() }
             @endif
         </div>
     </div>
