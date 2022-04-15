@@ -1,6 +1,6 @@
 @extends('adminlte::page')
 
-@section('title', 'Perfis')
+@section('title', 'Permissões')
 
 @section('content_header')
     <ol class="breadcrumb">
@@ -9,11 +9,11 @@
         </li>
 
         <li class="breadcrumb-item active">
-            <a href="{{ route('profiles.index') }}">Perfis</a>
+            <a href="{{ route('permissions.index') }}">Perfis</a>
         </li>
     </ol>
 
-    <h1>Painel <a href="{{ route('profiles.create') }}" class="btn btn-dark" method="POST" style="margin-left: 10px">Criar Novo Perfil</a> </h1>
+    <h1>Permissões <a href="{{ route('permissions.create') }}" class="btn btn-dark" method="POST" style="margin-left: 10px">Criar Novo Perfil</a> </h1>
 
 @stop
 
@@ -21,7 +21,7 @@
     <p>Listagem dos Planos</p>
     <div class="card">
         <div class="card-header">
-            <form action="{{ route('profiles.search') }}" method="POST" class="form form-inline">
+            <form action="{{ route('permissions.search') }}" method="POST" class="form form-inline">
                 @csrf
                 <div class="form-group">
                 <input type="text" name="filter" placeholder="Filtro" class="form-control" value="{{ $filters['filter'] ??  ''}}">
@@ -40,18 +40,18 @@
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach ($profiles as $profiles)
+                    @foreach ($permissions as $permissions)
                         <tr>
                             <td>
-                                {{ $profiles->name }}
+                                {{ $permissions->name }}
                             </td>
             
                             <td>
 
 
-                                <a href="{{ route('profiles.edit', $profiles->id) }}" class="btn btn-primary">Editar</a>
+                                <a href="{{ route('permissions.edit', $permissions->id) }}" class="btn btn-primary">Editar</a>
 
-                                <a href="{{ route('profiles.show', $profiles->id) }}" class="btn btn-info">Ver</a>
+                                <a href="{{ route('permissions.show', $permissions->id) }}" class="btn btn-info">Ver</a>
                             </td>
                         </tr>
                     @endforeach

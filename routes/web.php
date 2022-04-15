@@ -5,12 +5,9 @@
  use App\Http\Controllers\Admin\DetailPlanController;
  use App\Http\Controllers\Admin\ACL\ProfileController;
 
- Route::any('profiles/search', 'ACL\ProfileController@search')->name('profiles.search');
+ Route::any('profiles/search', [ProfileController::class, 'search'])->name('profiles.search');
  Route::resource('profiles', ProfileController::class );
  
-
-
-
 
  Route::prefix('admin')
  ->namespace('Admin')
