@@ -61,10 +61,10 @@
         <div class="card-footer">
             @if (isset($filters))
                 <p> se filters estiver definida roda aqui</P>
-                { $profiles->appends($filters)->links() }
+                { $permissions->appends($filters)->links() }
             @else
                 <p> se FILTER NAO DEFINIDA estiver definida roda aqui</P>
-                { $profiles->links() }
+                { $permissions->links() }
             @endif
         </div>
     </div>

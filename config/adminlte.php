@@ -233,6 +233,10 @@ return [
             'text' => 'Perfil',
             'url'  => 'profiles',
         ],
+        [
+            'text' => 'Permissão',
+            'url'  => 'permissions',
+        ],
     ],
 
     /*

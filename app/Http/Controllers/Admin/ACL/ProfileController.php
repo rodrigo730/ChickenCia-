@@ -6,6 +6,7 @@ use App\Http\Requests\StoreUpdateProfile;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Models\Profile;
+
 class ProfileController extends Controller
 {
 

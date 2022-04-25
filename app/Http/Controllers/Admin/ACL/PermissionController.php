@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Admin\ACL;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Models\Permission;
+use App\Http\Requests\StoreUpdatePermission;
 
 class PermissionController extends Controller
 {
